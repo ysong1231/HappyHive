@@ -8,4 +8,5 @@ Besides, it also contains a S-1A form Query to help users acquiring information 
 This dashboard will significantly reduce the time and efforts to investigate in how offering lowball priced stocks will influence the IPO.
 
 ## Project Website
-54.205.26.87
+
+[HappyHive](http://ec2-54-205-26-87.compute-1.amazonaws.com/)
