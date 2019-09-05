@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>IPO Query</title>
+    <link rel="shortcut icon" href="img/happy-icon.jpg">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body> 
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->        
+    <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <h2 href="index.html" style="float: left">
+                            Happy Hive IPO Information Dashboard
+                        </h2>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+
+        <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar shrinked">
+            
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li> <a href="index.html"><i class="icon-home"></i>Home</a></li>
+            </ul>
+            <span class="heading">Basic</span>
+            <ul class="list-unstyled">
+                <li> <a href="chart.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+                <li class="active"> <a href="IPOQuery.html"> <i class="icon-search"></i>IPO Query </a></li> 
+            </ul>
+            <span class="heading">Extra</span>
+            <ul class="list-unstyled"> 
+                <li><a href="S1FormHelper.html"><i class="fa fa-globe"></i>S-1/A Form Helper </a></li>
+            </ul>
+        </nav>
+
+        <div class="content-inner active">
+            
+            <!--***** USER INFO *****-->
+            <div class="card form" id="form1">
+                <div class="card-header">
+                    <h3><i class="icon-search"></i> IPO Query</h3>
+                </div>
+                <br>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="startMonth">Start Month</label>
+                                <input class="form-control" type="month" value="" id="startMonth">
+                            </div>
+                            <div class="form-group">
+                                <label for="endMonth">End Month</label>
+                                <input class="form-control" type="month" value="" id="endMonth">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Market</label>
+                                <select class="form-control" id="market">
+                                    <option value="NASDAQ">NASDAQ</option>
+                                    <option value="NASDAQ Capital">NASDAQ Capital</option>
+                                    <option value="NASDAQ Global">NASDAQ Global</option>
+                                    <option value="NASDAQ Global Select">NASDAQ Global Select</option>
+                                    <option value="NYSE">NYSE</option>
+                                    <option value="NYSE MKT">NYSE MKT</option>
+                                    <option value="NYSE Arca">NYSE Arca</option>
+                                    <option value="All">All Markets</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> 
+                            <div class="form-group">
+                                <label for="companyName">Company Name</label>
+                                <input type="companyName" class="form-control" id="companyName" placeholder="Enter Company Name">
+                            </div> 
+                            <div class="form-group">
+                                <label for="companySymbol">Company Symbol</label>
+                                <input type="companySymbol" class="form-control" id="companySymbol" placeholder="Enter Company Symbol">
+                            </div>
+                            <small class="form-text text-muted">If Company Name or Symbol was entered, the query time and market will be ignored!</small>
+                        </div>
+                    </div> 
+                    <button type="reset" class="btn btn-general btn-white" style="float: right">Cancel</button> 
+                    <button type="button" class="btn btn-general btn-blue mr-2" style="float: right" onclick="checkForm()">Query</button>  
+                </form>
+                <br>
+                <div class="card-header">
+                    <h3><i class="icon-list"></i> Query Result</h3>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card card-c2">
+                            <table id="info_table" class="table table-hover">
+                                <thead>
+                                    <tr class="bg-info text-white">
+                                        <th>Company Name</th>
+                                        <th>Symbol</th>
+                                        <th>Market</th> 
+                                        <th>IPO Price</th>
+                                        <th>Shares</th>
+                                        <th>Offer Amount</th>
+                                        <th>IPO Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="query_result">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> 
+                <div class="card-footer">
+                    <div id="txtHint">
+                        <small class="form-text text-muted">
+                            Data from <a href="https://www.nasdaq.com/" target="_blank">NASDAQ</a>.
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <!--***** REPORT-2 *****-->     
+            <div class="row" id="report2">
+                <div class="col-md-12">
+                    
+                </div>
+            </div>
+            
+            <!--***** FOOTER *****-->    
+            <div class="row">
+                <center style="width: 100%">Copyright © 2019. <a href="index.html">Happy Hive</a></center>
+            </div>
+        </div>
+    </div> 
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script> 
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+
+    <!--Core Javascript -->
+    <script src="js/myIPOQuery.js"></script>
+    
+</body>
+
+</html>

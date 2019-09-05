@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Happy Hive</title>
+    <link rel="shortcut icon" href="img/happy-icon.jpg">
+    
+    <!-- global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-icon-style.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="css/pages/gallery.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body> 
+<!--====================================================
+                         MAIN NAVBAR
+======================================================-->        
+    <header class="header">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="Search Now" class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid ">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <div class="navbar-header">
+                        <h2 href="index.html" style="float: left">
+                            Happy Hive IPO Information Dashboard
+                        </h2>
+                    </div>
+                </div>
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Expand-->
+                    <li class="nav-item d-flex align-items-center full_scr_exp"><a class="nav-link" href="#"><img src="img/expand.png" onclick="toggleFullScreen(document.body)" class="img-fluid" alt=""></a></li>
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>
+                </ul> 
+            </div>
+        </nav>
+    </header>
+
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <div class="page-content d-flex align-items-stretch">
+
+        <!--***** SIDE NAVBAR *****-->
+        <nav class="side-navbar shrinked">
+            
+            <!-- Sidebar Navidation Menus-->
+            <ul class="list-unstyled">
+                <li class="active"> <a href="index.html"><i class="icon-home"></i>Home</a></li>
+            </ul>
+            <span class="heading">Basic</span>
+            <ul class="list-unstyled">
+                <li> <a href="chart.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+                <li> <a href="IPOQuery.html"> <i class="icon-search"></i>IPO Query </a></li> 
+            </ul>
+            <span class="heading">Extra</span>
+            <ul class="list-unstyled"> 
+                <li><a href="S1FormHelper.html"><i class="fa fa-globe"></i>S-1/A Form Helper </a></li>
+            </ul>
+        </nav>
+
+        <div class="content-inner active">
+            
+            <!--***** CONTENT *****-->     
+            <div class="row">
+                <div class="col-md-12 col-sm-3 mt-1">
+                    <div class="box-4">
+                        <img src="img/logo.jpg">
+                        <div class="box-4-content">
+                            <h1 class="title" style="font-size: 50px">Happy Hive IPO Information Dashboard</h1>
+                            <div class="icon" style="align-content: flex-start">
+                                <br>
+                                <p align="left" style="width:95%">
+                                    This dashboard aims to assist users to analyze the effect of offering lowball priced stocks before IPO on the short term of the stock performance. 
+                                    It focus on companies going public during the year of 2018 and gather IPO filings data and stock performance data of these companies. 
+                                    Our product provides a user interface which allows users to acquire straight forward statistical graph to present IPO and stock market data. 
+                                    Besides, it also contains a S-1A form Query to help users acquiring information from S-1A form by simply imputing the keywords and clicking the submit button. 
+                                    This dashboard will significantly reduce the time and efforts to investigate in how offering lowball priced stocks will influence the IPO.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card form" id="form2">
+                <div class="card-header">
+                    <h3><i class="icon-user"></i> Developer</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 mt-4">
+                        <div class="box-4">
+                            <img src="img/YilinSong.jpg">
+                            <div class="box-4-content">
+                                <h3 class="title">Yilin Song</h3>
+                                <div class="icon" style="align-content: flex-start">
+                                    <p align="left" style="width:95%">
+                                        Johns Hopkins University
+                                    </p>
+                                    <p align="left" style="width:95%">
+                                        Master of Science in Information Systems
+                                    </p>
+                                    <p align="left">
+                                        <a href="https://www.linkedin.com/in/yilin-philip-song-805682112/" target="_blank">LinkedIn</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6 mt-4">
+                        
+                            <div class="box-4" align="center">
+                                <div align="center" style="width:90%">
+                                    <p align="left">
+                                        Yilin Song acquired his Master of Science in Information Systems from the Johns Hopkins University in August, 2019. He also holds a Bachelor of Engineering in Management Information System from the Renmin University of China. Yilin has accumulated solid knowledge about data structure, object-oriented programming, database, systems design, and IT project management from his curriculum, as well as plenty of hands-on experiences from internships. 
+                                    </p>
+                                    <p align="left">
+                                        During his internship at the Rock Creek Group as a software engineer, Yilin applied node.js, React, and GraphQL to Micro-App “Share-Class” for AWS migration, and conducted the fund manager sentiment analysis project using Google BERT. Yilin also got trained in Linux and Hadoop, and created regional congestion model based on Word2Vec during his experience at Baidu Maps as an intern software engineer. 
+                                    </p>
+                                    <p align="left">
+                                        Yilin shows great enthusiasm in solving problems with programming, and he is a novelty seeker. With a strong sense of responsibility, he can always finish his task on time in great quality.
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--***** FOOTER *****-->  
+            <br>
+            <div class="row">
+                <center style="width: 100%">Copyright © 2019. <a href="index.html">Happy Hive</a></center>
+            </div>
+        </div>
+    </div> 
+
+    <!--Global Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.validate.min.js"></script> 
+    <script src="js/chart.min.js"></script> 
+    <script src="js/front.js"></script> 
+
+    <!--Core Javascript -->
+    <script src="js/myIPOQuery.js"></script>
+    
+</body>
+
+</html>
