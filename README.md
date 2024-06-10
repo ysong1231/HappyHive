@@ -7,6 +7,9 @@ This project provides a user interface which allows users to acquire straight fo
 Besides, it also contains a S-1A form Query to help users acquiring information from S-1A form by simply imputing the keywords and clicking the submit button. 
 This dashboard will significantly reduce the time and efforts to investigate in how offering lowball priced stocks will influence the IPO.
 
+## Author
+Yilin Song
+
 ## Project Website
 
 [HappyHive](http://ec2-54-205-26-87.compute-1.amazonaws.com/)
